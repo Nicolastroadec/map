@@ -17,7 +17,7 @@ export function CardSkeleton() {
     );
 }
 
-export function CardsSkeleton() {
+export default function CardsSkeleton() {
     return (
         <>
             <CardSkeleton />
