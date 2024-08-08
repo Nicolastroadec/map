@@ -4,7 +4,7 @@ import dynamic from 'next/dynamic';
 import { maps } from '@/app/lib/data'
 
 
-const MiniMap = dynamic(() => import('@/app/ui/minimap'), { ssr: false });
+const MiniMap = dynamic(() => import('@/app/ui/minimap'), { loading: () => <p>A map is loading</p>, ssr: false });
 
 export default function Slider() {
 
