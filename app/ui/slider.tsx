@@ -2,9 +2,10 @@
 
 import dynamic from 'next/dynamic';
 import { maps } from '@/app/lib/data'
+import { CardSkeleton } from '@/app/ui/skeletons';
 
 
-const MiniMap = dynamic(() => import('@/app/ui/minimap'), { loading: () => <p>A map is loading</p>, ssr: false });
+const MiniMap = dynamic(() => import('@/app/ui/minimap'), { loading: () => <CardSkeleton />, ssr: false });
 
 export default function Slider() {
 

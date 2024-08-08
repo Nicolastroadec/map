@@ -3,12 +3,9 @@ import dynamic from 'next/dynamic';
 import { maps } from '@/app/lib/data';
 
 import Slider from '@/app/ui/slider';
+import { CardSkeleton } from '@/app/ui/skeletons';
 
-
-
-import CardsSkeleton from '@/app/ui/skeletons';
-
-const Map = dynamic(() => import('@/app/ui/map'), { loading: () => <p>A map is loading</p>, ssr: false });
+const Map = dynamic(() => import('@/app/ui/map'), { loading: () => <CardSkeleton />, ssr: false });
 
 export default function Home() {
   return (
