@@ -33,3 +33,11 @@ body {
 .minimap-leaflet .leaflet-control-container {
   display: none;
 }
+
+.container-slider {
+  width: -webkit-fill-available;
+  width: -moz-available;
+  width: fill-available;
+  width: 100%;
+  /* Fallback général */
+}
