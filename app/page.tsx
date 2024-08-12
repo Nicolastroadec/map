@@ -9,7 +9,7 @@ const Map = dynamic(() => import('@/app/ui/map'), { loading: () => <CardSkeleton
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col justify-between p-24">
+    <main className=" bg-black  min-h-screen p-24">
       <Slider />
       {maps.map((map, index) => (
         <Map key={index} url={map.url} />
