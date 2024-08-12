@@ -27,7 +27,7 @@ export default function Slider() {
 
     return (
         <>
-            <div className="container-slider z-20 block w-full max-w-full fixed items-center mb-10">
+            <div className="left-0 right-0 z-20 block fixed items-center mb-10">
                 <div className="relative bg-black flex">
                     <div onClick={handlePreviousClick}>
                         <ArrowLeft />
