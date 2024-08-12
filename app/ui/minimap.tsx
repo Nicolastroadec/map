@@ -26,3 +26,4 @@ export default function MiniMap({ url, cardWidth }: MiniMapProps) {
 };
 
 
+AZEAZE
