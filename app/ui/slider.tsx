@@ -10,18 +10,18 @@ const MiniMap = dynamic(() => import('@/app/ui/minimap'), { loading: () => <Card
 
 export default function Slider() {
 
-    const [widthCard, setWidthCard] = useState(0);
+    const [widthCards, setWidthCards] = useState(0);
     const cardWidth: number = 250;
     function handleNextClick() {
-        setWidthCard(prevWidth => prevWidth + cardWidth + 20);
+        setWidthCards(prevWidth => prevWidth - (cardWidth + 20));
     }
 
     function handlePreviousClick() {
-        setWidthCard(prewidth => {
+        setWidthCards(prewidth => {
             if (prewidth === 0) {
                 return prewidth;
             }
-            return prewidth - cardWidth + 20;
+            return prewidth + (cardWidth + 20);
         })
     }
 
@@ -33,7 +33,7 @@ export default function Slider() {
                         <ArrowLeft />
                     </div>
                     <div className="w-[90%] h-[200px] overflow-hidden flex items-center">
-                        <div className=" cards flex transition-transform duration-300 items-center ease-in-out" style={{ transform: `translateX(-${widthCard}px)` }}
+                        <div className="cards flex transition-transform duration-300 items-center ease-in-out" style={{ transform: `translateX(${widthCards}px)` }}
                         >
                             {maps.map((map, index) => (
                                 <div key={index} className="card mr-[20px]">
