@@ -66,8 +66,6 @@ export default function Slider() {
     }, [visibleCards]);
 
     function handleNextClick() {
-        console.log(currentIndex);
-        console.log(cardsNumber);
         if (currentIndex === cardsNumber) {
             return;
         }
@@ -85,8 +83,6 @@ export default function Slider() {
 
         if (card.current) {
             setCurrentIndex(prevIndex => prevIndex - 1)
-            console.log(cardsNumber); console.log(currentIndex);
-
             const cardWidth = card.current.offsetWidth;
             setWidthCards(prewidth => {
                 if (prewidth === 0) {
