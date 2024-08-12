@@ -27,12 +27,12 @@ export default function Slider() {
 
     return (
         <>
-            <div className="left-0 right-0 z-20 block fixed items-center mb-10">
-                <div className="relative bg-black flex">
-                    <div onClick={handlePreviousClick}>
+            <div className="left-0 right-0 top-0 z-20 block fixed items-center mb-10 pt-[2rem] bg-black">
+                <div className="relative bg-black flex justify-center">
+                    <div className="flex items-center" onClick={handlePreviousClick}>
                         <ArrowLeft />
                     </div>
-                    <div className="w-full h-[200px] overflow-hidden  items-center">
+                    <div className="w-[90%] h-[200px] overflow-hidden flex items-center">
                         <div className=" cards flex transition-transform duration-300 items-center ease-in-out" style={{ transform: `translateX(-${widthCard}px)` }}
                         >
                             {maps.map((map, index) => (
@@ -42,7 +42,7 @@ export default function Slider() {
                             ))}
                         </div>
                     </div>
-                    <div onClick={handleNextClick}>
+                    <div className="flex items-center" onClick={handleNextClick}>
                         <ArrowRight />
                     </div>
                 </div>
