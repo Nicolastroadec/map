@@ -1,22 +1,17 @@
 'use client';
 
-
-// components/Map.js
 import { MapContainer, TileLayer } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 
-
-interface MapProps {
-    url: string
-}
-
-export default function Map({ url }: MapProps) {
-    // Mémoriser le MapContainer pour éviter la réinitialisation
+import { MapsDetails } from '@/app/lib/data';
 
 
-    return <MapContainer center={[48.8566, 2.3522]} zoom={5} className="w-2/3 h-[500px] mb-10 z-0">
+
+export default function Map({ url }: MapsDetails) {
+    return <MapContainer center={[48.8566, 2.3522]} zoom={5} className="w-3/5 h-[500px] mb-10 z-0">
         <TileLayer
-            url={url}
+            url={url ? url : 'No url provided'}
+            attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMapAZE</a> contributors'
         />
     </MapContainer>;
 };

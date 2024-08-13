@@ -9,7 +9,11 @@ import React, { useEffect, useRef, useState } from 'react';
 
 const MiniMap = dynamic(() => import('@/app/ui/minimap'), { loading: () => <CardSkeleton />, ssr: false });
 
-export default function Slider() {
+interface sliderProps {
+    indexClicked: (index: number) => void;
+}
+
+export default function Slider({ indexClicked }: sliderProps) {
     const card = useRef<HTMLDivElement>(null);
 
     const [widthCards, setWidthCards] = useState(0);
@@ -19,6 +23,10 @@ export default function Slider() {
     const [currentIndex, setCurrentIndex] = useState(0);
 
     const cardsNumber = maps.length;
+
+    function clickOnMap(index: number) {
+        indexClicked(index);
+    }
 
     useEffect(() => {
         const handleResize = () => {
@@ -93,6 +101,7 @@ export default function Slider() {
         }
     }
 
+
     return (
         <>
             <div className="left-0 right-0 top-0 z-20 block fixed items-center mb-10 pt-[2rem] bg-black">
@@ -105,7 +114,7 @@ export default function Slider() {
                         >
                             {maps.map((map, index) => (
                                 <div ref={card} key={index} className="card flex-grow-0 flex-shrink-0 2xl:w-[14.28%] xl:w-1/6 lg:w-1/5 md:w-1/4 sm:w-1/3 w-1/2 max-[480px]:w-full pl-[20px]">
-                                    <MiniMap url={map.url} />
+                                    <MiniMap url={map.url ? map.url : ''} clickOnMap={clickOnMap} index={index} />
                                 </div>
                             ))}
                         </div>
