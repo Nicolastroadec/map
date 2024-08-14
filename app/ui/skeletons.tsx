@@ -4,15 +4,27 @@ const shimmer =
 export function CardSkeleton() {
     return (
         <div
-            className={`${shimmer} relative overflow-hidden rounded-xl bg-gray-800 p-2 shadow-sm`}
+            className={`${shimmer} h-[150px] relative overflow-hidden rounded-xl bg-gray-800 p-2 shadow-sm`}
         >
             <div className="flex p-4">
                 <div className="h-5 w-5 rounded-md bg-gray-900" />
                 <div className="ml-2 h-6 w-16 rounded-md bg-gray-900 text-sm font-medium" />
             </div>
-            <div className="flex items-center justify-center truncate rounded-xl bg-gray-800 px-4 py-8">
-                <div className="h-7 w-20 rounded-md bg-gray-900" />
+
+        </div>
+    );
+}
+
+export function MapSkeleton() {
+    return (
+        <div
+            className={`${shimmer} h-[500px] w-full xl:w-2/3 relative overflow-hidden rounded-xl bg-gray-800 p-2 shadow-sm`}
+        >
+            <div className="flex p-4">
+                <div className="h-5 w-5 rounded-md bg-gray-900" />
+                <div className="ml-2 h-6 w-16 rounded-md bg-gray-900 text-sm font-medium" />
             </div>
+
         </div>
     );
 }
