@@ -1,7 +1,7 @@
 
 'use client';
 
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import dynamic from 'next/dynamic';
 import { maps } from '@/app/lib/data';
 
@@ -12,9 +12,15 @@ import MapInfos from '@/app/ui/mapInfos';
 
 import { code } from '@/app/lib/code';
 
+import { MapsDetails } from '@/app/lib/data';
+import clsx from 'clsx';
+
 const Map = dynamic(() => import('@/app/ui/map'), { loading: () => <CardSkeleton />, ssr: false });
 
 export default function Home() {
+
+  const [opacity, setOpacity] = useState('opacity-0');
+
   function indexClicked(index: number) {
     const marginTop = 250;
     const rect = mapRefs?.current[index]?.getBoundingClientRect();
@@ -24,7 +30,20 @@ export default function Home() {
     });
   }
 
+  function handleClickOnCode(code: string): void {
+    setOpacity('opacity-1');
+    setTimeout(() => (
+      setOpacity('opacity-0 transition-opacity duration-200')
+    ), 2000);
+    navigator.clipboard.writeText(code);
+  }
+
   const mapRefs = useRef<(HTMLDivElement | null)[]>([]);
+
+  const getUrl = (map: MapsDetails): string => {
+    return map.urlForCode || map.url || 'No url provided'
+  }
+
   return (
     <main className=" bg-black  min-h-screen p-24 mt-40">
       <Slider indexClicked={(index) => indexClicked(index)} />
@@ -35,9 +54,10 @@ export default function Home() {
             <MapInfos data={{ name: map.name, license: map.license, maxRequests: map.maxRequests }} />
           </div>
           <div>
-            <details className="border-grey-100 rounded">
-              <summary className="cursor-pointer">Voir le code HTML / JS</summary>
-              <pre className="text-white">{code(map.url ? map.url : 'Pas d\'url fournie')}</pre>
+            <details className="p-5 border-grey-600 border-solid border-2 rounded-small mb-10 relative">
+              <summary className="cursor-pointer">Voir le code</summary>
+              <pre onClick={() => handleClickOnCode(code(getUrl(map)))} className="cursor-pointer mt-5 text-white z-index-0">{code(getUrl(map))}</pre>
+              <div className={`absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] z-index-10 ${opacity}`}>Copié !</div>
             </details>
           </div>
         </div>
