@@ -44,11 +44,11 @@ export default function Home() {
   }
 
   return (
-    <main className=" bg-[#0d1321]  min-h-screen p-24 mt-40">
+    <main className=" bg-[#0d1321] min-h-screen p-24 mt-40">
       <Slider indexClicked={(index) => indexClicked(index)} />
       {maps.map((map, index) => (
         <div key={index} ref={(el) => { mapRefs.current[index] = el }}>
-          <div className="flex">
+          <div className="flex xl:flex-row flex-col">
             <Map url={map.url} />
             <MapInfos data={{ name: map.name, license: map.license, maxRequests: map.maxRequests, site: map.site }} />
           </div>
