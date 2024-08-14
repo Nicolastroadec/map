@@ -53,9 +53,9 @@ export default function Home() {
             <MapInfos data={{ name: map.name, license: map.license, maxRequests: map.maxRequests, site: map.site }} />
           </div>
           <div>
-            <details className="p-5 bg-[#1d2d44] hover:bg-[#3e5c76] border-grey-600 border-solid border-2 rounded-small mb-10 relative">
-              <summary className="cursor-pointer">Voir le code</summary>
-              <pre onClick={() => handleClickOnCode(code(getUrl(map)))} className="cursor-pointer mt-5 text-white z-index-0">{code(getUrl(map))}</pre>
+            <details className="bg-[#1d2d44] hover:bg-[#3e5c76] border-grey-600 border-solid border-2 rounded-small mb-10 relative">
+              <summary className="p-5 cursor-pointer">Voir le code</summary>
+              <pre onClick={() => handleClickOnCode(code(getUrl(map)))} className="pl-5 pr-5 pb-5 cursor-pointer mt-5 text-white z-index-0">{code(getUrl(map))}</pre>
               <div className={`absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] rounded-xl z-index-10 p-2 pl-4 pr-4 bg-gray-800 ${opacity}`}>Copié !</div>
             </details>
           </div>
