@@ -6,8 +6,9 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Cartes interactives",
-  description: "Une liste de cartes utilisables gratuitement, à personnaliser avec Leaflet",
-  keywords: "Carte, fond de carte, cartes interactives, Leaflet, NextJS, TypeScript, OpenStreetMap"
+  description: "Une liste de cartes utilisables gratuitement, sous certaines conditions, à personnaliser avec Leaflet",
+  keywords: "Carte, fond de carte, cartes interactives, Leaflet, NextJS, TypeScript, OpenStreetMap",
+  authors: { name: "Nicolas Troadec", url: "https://www.nicolastroadec.fr" },
 };
 
 export default function RootLayout({
