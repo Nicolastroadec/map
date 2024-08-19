@@ -44,8 +44,12 @@ export default function Home() {
   }
 
   return (
-    <main className=" bg-[#0d1321] min-h-screen p-24 mt-40">
-      <Slider indexClicked={(index) => indexClicked(index)} />
+    <main className=" bg-[#0d1321] min-h-screen md:p-24 mt-40">
+      <h1 className="text-3xl mb-5">Une liste de cartes utilisables gratuitement, ou avec certaines limites</h1>
+      <h2 className="text-xl mb-4">Application propulsée par Next.js, Tailwind et TypeScript 🚀</h2>
+      <p className="text-xl mb-4">
+        Pour plus d{`'`}informations, rendez-vous sur <a className="underline" href="http://www.nicolastroadec.fr" target="_blank">mon site internet</a>
+      </p>        <Slider indexClicked={(index) => indexClicked(index)} />
       {maps.map((map, index) => (
         <div key={index} ref={(el) => { mapRefs.current[index] = el }}>
           <div className="flex xl:flex-row flex-col">
