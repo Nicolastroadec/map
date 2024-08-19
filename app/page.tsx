@@ -53,7 +53,7 @@ export default function Home() {
       {maps.map((map, index) => (
         <div key={index} ref={(el) => { mapRefs.current[index] = el }}>
           <div className="flex xl:flex-row flex-col">
-            <Map url={map.url} />
+            <Map data={{ name: map.name, license: map.license, site: map.site, url: map.url }} />
             <MapInfos data={{ name: map.name, license: map.license, maxRequests: map.maxRequests, site: map.site }} />
           </div>
           <div>
