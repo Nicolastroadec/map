@@ -104,15 +104,15 @@ export default function Slider({ indexClicked }: sliderProps) {
     return (
         <>
             <div className="left-0 right-0 top-0 z-20 block fixed items-center mb-10 pt-[2rem] bg-[#1d2d44]">
-                <div className="relative flex justify-center">
+                <div className="relative flex justify-between max-[480px]:justify-center">
                     <div className="flex items-center" onClick={handlePreviousClick}>
                         <ArrowLeft />
                     </div>
-                    <div className="w-[90%] h-[200px] overflow-hidden flex items-center">
-                        <div className="cards w-[100%] flex transition-transform duration-300 items-center ease-in-out" style={{ transform: `translateX(${widthCards}px)` }}
+                    <div className="w-[60%] sm:w-[90%] h-[150px] sm:h-[200px] overflow-hidden flex items-center">
+                        <div className="cards  w-[100%] flex transition-transform duration-300 items-center ease-in-out" style={{ transform: `translateX(${widthCards}px)` }}
                         >
                             {maps.map((map, index) => (
-                                <div ref={card} key={index} className="card flex-grow-0 flex-shrink-0 2xl:w-[14.28%] xl:w-1/6 lg:w-1/5 md:w-1/4 sm:w-1/3 w-1/2 max-[480px]:w-full pl-[20px]">
+                                <div ref={card} key={index} className="card flex-grow-0 flex-shrink-0 2xl:w-[14.28%] xl:w-1/6 lg:w-1/5 md:w-1/4 sm:w-1/3 w-1/2 max-[480px]:w-full max-[480px]:pl-[0px] pl-[20px]">
                                     <MiniMap url={map.url ? map.url : ''} clickOnMap={clickOnMap} index={index} />
                                 </div>
                             ))}
