@@ -1,20 +1,16 @@
-
 'use client';
-
 import { useRef, useState } from 'react';
 import dynamic from 'next/dynamic';
-import { maps } from '@/app/lib/data';
-
-import Footer from '@/app/ui/footer';
-
-import Slider from '@/app/ui/slider';
-import { CardSkeleton, MapSkeleton } from '@/app/ui/skeletons';
-
-import MapInfos from '@/app/ui/mapInfos';
 
 import { code } from '@/app/lib/code';
-
 import { MapsDetails } from '@/app/lib/data';
+
+import { maps } from '@/app/lib/data';
+import { MapSkeleton } from '@/app/ui/skeletons';
+
+import Footer from '@/app/ui/footer';
+import Slider from '@/app/ui/slider';
+import MapInfos from '@/app/ui/mapInfos';
 
 const Map = dynamic(() => import('@/app/ui/map'), { loading: () => <MapSkeleton />, ssr: false });
 

@@ -5,8 +5,9 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Maps",
-  description: "List of maps",
+  title: "Cartes interactives",
+  description: "Une liste de cartes utilisables gratuitement, à personnaliser avec Leaflet",
+  keywords: "Carte, fond de carte, cartes interactives, Leaflet, NextJS, TypeScript, OpenStreetMap"
 };
 
 export default function RootLayout({
