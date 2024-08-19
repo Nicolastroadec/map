@@ -9,8 +9,11 @@ const Footer = () => {
                 <p>
                     Crée par <a className="underline text-blue-300 hover:text-blue-500" href="https://www.nicolastroadec.fr">Nicolas Troadec</a>
                 </p>
+                <p>
+                    <a className="underline text-blue-300 hover:text-blue-500" href="https://github.com/Nicolastroadec/maps" target="_blank">Repo Github de cette app</a>
+                </p>
             </div>
-        </footer>
+        </footer >
     );
 };
 
