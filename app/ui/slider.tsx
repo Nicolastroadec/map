@@ -104,7 +104,7 @@ export default function Slider({ indexClicked }: sliderProps) {
     return (
         <>
             <div className="left-0 right-0 top-0 z-20 block fixed items-center mb-10 pt-[2rem] bg-[#1d2d44]">
-                <div className="relative flex justify-between max-[480px]:justify-center">
+                <div className="relative flex justify-around max-[480px]:justify-center">
                     <div className="flex items-center" onClick={handlePreviousClick}>
                         <ArrowLeft />
                     </div>
