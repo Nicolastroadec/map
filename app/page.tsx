@@ -47,9 +47,7 @@ export default function Home() {
       <p className="mb-4">Tous les fonds de carte listés ci-dessous peuvent être utilisés gratuitement. Certains peuvent nécessiter de créer un compte, afin de récupérer une clé API ou bien l{`'`}ID d{`'`}un compte.
         Ces cartes peuvent être utilisées pour y ajouter des markers, des popups, des frontières... Attention à bien lire les conditions d{`'`}utilisation : certaines d{`'`}entre elles ne peuvent pas servir à un usage commercial, et la plupart doivent être utilisées de façon raisonnable.</p>
       <h2 className="text-xl mb-4">Application propulsée par Next.js, Tailwind et TypeScript 🚀</h2>
-      <p className="text-xl mb-4">
-        Pour plus d{`'`}informations, rendez-vous sur <a className="underline" href="http://www.nicolastroadec.fr" target="_blank">mon site internet</a>
-      </p>        <Slider indexClicked={(index) => indexClicked(index)} />
+      <Slider indexClicked={(index) => indexClicked(index)} />
       {maps.map((map, index) => (
         <div key={index} ref={(el) => { mapRefs.current[index] = el }}>
           <div className="flex xl:flex-row flex-col">
