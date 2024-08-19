@@ -9,6 +9,7 @@ export const metadata: Metadata = {
   description: "Une liste de cartes utilisables gratuitement, sous certaines conditions, à personnaliser avec Leaflet",
   keywords: "Carte, fond de carte, cartes interactives, Leaflet, NextJS, TypeScript, OpenStreetMap",
   authors: { name: "Nicolas Troadec", url: "https://www.nicolastroadec.fr" },
+  publisher: "index, follow",
 };
 
 export default function RootLayout({
