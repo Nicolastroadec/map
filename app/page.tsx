@@ -5,6 +5,8 @@ import { useRef, useState } from 'react';
 import dynamic from 'next/dynamic';
 import { maps } from '@/app/lib/data';
 
+import Footer from '@/app/ui/footer';
+
 import Slider from '@/app/ui/slider';
 import { CardSkeleton, MapSkeleton } from '@/app/ui/skeletons';
 
@@ -46,6 +48,8 @@ export default function Home() {
   return (
     <main className=" bg-[#0d1321] min-h-screen md:p-24 mt-40">
       <h1 className="text-3xl mb-5">Une liste de cartes utilisables gratuitement, ou avec certaines limites</h1>
+      <p className="mb-4">Tous les fonds de carte listés ci-dessous peuvent être utilisés gratuitement. Certains peuvent nécessiter de créer un compte, afin de récupérer une clé API ou bien l{`'`}ID d{`'`}un compte, afin de l{`'`}utiliser.
+        Ces cartes peuvent être utilisés pour y ajouter des markers, des popups, des frontières... Attention à bien lire les conditions d{`'`}utilisation de ces cartes : certaines d{`'`}entre elles ne peuvent être servir à un usage commercial, et la plupart doivent être utilisées de façon raisonnable.</p>
       <h2 className="text-xl mb-4">Application propulsée par Next.js, Tailwind et TypeScript 🚀</h2>
       <p className="text-xl mb-4">
         Pour plus d{`'`}informations, rendez-vous sur <a className="underline" href="http://www.nicolastroadec.fr" target="_blank">mon site internet</a>
@@ -66,6 +70,8 @@ export default function Home() {
         </div>
       ))
       }
+      <Footer />
+
     </main >
   );
 }
