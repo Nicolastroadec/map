@@ -8,11 +8,11 @@ import { MapsDetails } from '@/app/lib/data';
 import { maps } from '@/app/lib/data';
 import { MapSkeleton } from '@/app/ui/skeletons';
 
-import Footer from '@/app/ui/footer';
-import Slider from '@/app/ui/slider';
-import MapInfos from '@/app/ui/mapInfos';
+import Footer from '@/app/components/footer';
+import Slider from '@/app/components/slider';
+import MapInfos from '@/app/components/mapInfos';
 
-const Map = dynamic(() => import('@/app/ui/map'), { loading: () => <MapSkeleton />, ssr: false });
+const Map = dynamic(() => import('@/app/components/map'), { loading: () => <MapSkeleton />, ssr: false });
 
 export default function Home() {
 

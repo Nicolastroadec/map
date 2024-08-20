@@ -7,7 +7,7 @@ import React, { useEffect, useRef, useState } from 'react';
 
 
 
-const MiniMap = dynamic(() => import('@/app/ui/minimap'), { loading: () => <CardSkeleton />, ssr: false });
+const MiniMap = dynamic(() => import('@/app/components/minimap'), { loading: () => <CardSkeleton />, ssr: false });
 
 interface sliderProps {
     indexClicked: (index: number) => void;
